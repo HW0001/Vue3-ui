@@ -1,5 +1,4 @@
-<template>
-<img alt="Vue logo" src="./assets/logo.png" /> 
+<template> 
 <router-view></router-view>
 </template>
 
@@ -12,7 +11,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-img{
-    width: 100px;
-}
+  
 </style>

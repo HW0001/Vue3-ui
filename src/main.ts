@@ -1,18 +1,20 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './index.css'
 import {createWebHistory,createRouter} from "vue-router"
 
-import Myapp1 from './components/Myapp1.vue'
-import Myapp2 from './components/Myapp2.vue'
+import Home from './views/Home.vue'
+import Doc from './views/Doc.vue'
 
 const history=createWebHistory()
 const router=createRouter({
     history,
     routes:[{
-        path:'/',component:Myapp1
+        redirect:"/home",
+        path:"/"
+    },{ 
+        path:'/home',component:Home
     },{
-        path:'/1',component:Myapp2
+        path:'/doc',component:Doc
     }]
 })
 
