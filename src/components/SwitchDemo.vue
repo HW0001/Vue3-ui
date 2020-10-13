@@ -1,6 +1,6 @@
 <template>
     <div>
-       <Switch v-model:value="val"/>
+       <Switch v-model:value="bool"/>
     </div>
 </template>
 <script lang=ts>
@@ -11,9 +11,9 @@ export default {
         Switch
     },
     setup(props) {
-        const val=ref(false)
+        const bool=ref(false)
         return{
-            val
+            bool
         }
     }
 }
