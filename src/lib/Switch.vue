@@ -6,9 +6,11 @@ import { ref } from "vue";
 export default {
   props: {
     value: Boolean,
+    disable:Boolean
   },
-  setup(props, context) {
+  setup(props, context) { 
     const toogle = () => {
+        if(!props.disable)
       context.emit("update:value", !props.value);
     };
     return {
