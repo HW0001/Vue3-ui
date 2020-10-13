@@ -9,8 +9,7 @@ export default {
     components: {
     },
     setup(){
-        const clictwidth=document.documentElement.clientWidth
-        console.log(clictwidth)
+        const clictwidth=document.documentElement.clientWidth         
         const vasidevisible = ref(clictwidth<=500?false:true)
         provide("asidevis",vasidevisible)
     }

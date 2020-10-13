@@ -1,16 +1,17 @@
 <template>
-    <div><span @click="toogle" :class="{checked:checked}"></span></div>
+    <button :class="{checked:value}"><span @click="toogle"></span></button>
 </template>
 <script lang="ts"> 
 import { ref } from 'vue'
 export default {
-    setup(){
-        const checked =ref(false);
+    props:{
+        value:Boolean
+    },
+    setup(props,context){ 
         const toogle=()=>{
-            checked.value=!checked.value
+          context.emit("update:value",!props.value)
         }
-        return {
-            checked,
+        return { 
             toogle
         }
     }
@@ -19,11 +20,12 @@ export default {
 <style lang="scss" scoped>
     $h1 : 22px;
     $h2 : $h1 - 4px;
-    div{
+    button{
         height: $h1;
         width: $h1 * 2; 
         border-radius: $h1/2;
         background-color:rgba(0,0,0,.25);
+        border: none;
         position: relative;
         span{
             display: inline-block;
@@ -36,9 +38,15 @@ export default {
             background-color: #fff;
             cursor: pointer; 
             transition:left 250ms;
-        }
-        span.checked{ 
-            left: calc(100% - #{$h2} - 2px)
         } 
+    }
+    button.checked{
+        background-color: blue;
+        span{
+             left: calc(100% - #{$h2} - 2px)
+        }
+    }
+    button:focus{
+        outline: none;
     }
 </style>
