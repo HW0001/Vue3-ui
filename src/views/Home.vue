@@ -1,28 +1,42 @@
 <template>
-    <div>
-        <top-nav />
-        <div class="content">
-        <img src="../assets/logo.png" /> 
-
-        </div>
+  <div>
+    <top-nav />
+    <div class="content">
+      <img src="../assets/logo.png" />
+      <p>一些很厉害的轮子组件</p>
+      <div> <a>github</a> <router-link to='/doc'>开始</router-link></div> 
     </div>
+  </div>
 </template>
 <script lang="ts">
-import TopNav from '../components/TopNav.vue'
+import TopNav from "../components/TopNav.vue";
 export default {
-    components:{
-        TopNav
-    },
-    setup(){
-        
-    }
-}
+  components: {
+    TopNav,
+  },
+  setup() {},
+};
 </script>
 <style lang="scss" scoped>
-img{
-    width: 215px;
-    float: right;
-    margin-right: 60px;
+.content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction:column;
+    padding-top: 30px;;
+    img{
+        width: 200px;
+    }
+    a{
+       display: inline-block;
+        width: 100px;
+        height: 35px;
+        border: 1px solid  #42b983;
+        text-align: center;
+        line-height: 33px;
+        margin-right: 20px;
+        border-radius: 15px;
+        color: #42b983
+    }
 }
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="topnav">
     <span class="micon" @click="toggleVisidle">三</span>
-    <div class="logo"><h3>vu3 轮子组件</h3></div>
+    <div class="logo"><h3><router-link to='/home'> vu3 轮子组件</router-link></h3></div>
     <div class="funcs">
       <span>菜单一</span>
       <span>菜单二</span>

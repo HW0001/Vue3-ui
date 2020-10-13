@@ -1,11 +1,14 @@
 <template>
-  <div>
+  <div class="doc">
     <top-nav />
     <div class="content">
-      <aside>
-        <aside-list v-if="asidevisib"></aside-list>
+      <aside class="asidediv" v-if="asidevisib">
+        <aside-list></aside-list>
       </aside>
-      <main>内容区域</main>
+      <main class="maindiv">
+        内容区域
+        <router-view />
+      </main>
     </div>
   </div>
 </template>
@@ -27,8 +30,18 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.content {
-  display: flex;
-  justify-content: space-between;
+.doc {
+  height: calc(100vh - 60px);
+  .content {
+    display: flex;
+    height: 100%;
+    .asidediv {
+      width: 20%;
+      background-color: burlywood;
+    }
+    .maindiv {
+      width: 80%;
+    }
+  }
 }
 </style>
