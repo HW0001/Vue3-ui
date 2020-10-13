@@ -5,7 +5,7 @@
         <li><router-link to='switch'>switch</router-link></li>
         <li><router-link to='button'>button</router-link></li>
         <li><router-link to='dialog'>dialog</router-link></li>
-        <li><router-link to='tabs'>tabs</router-link></li> 
+        <li><router-link to='tabs'>tabsgit</router-link></li> 
         </ol>
     </div>
 </template>
