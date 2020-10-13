@@ -1,17 +1,21 @@
 <template>
     <div>
-        <div class="topnav">
-        <h3>vu3 轮子组件</h3>
-        </div>
+        <top-nav />
         <div class="content">
         <img src="../assets/logo.png" /> 
 
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
+import TopNav from '../components/TopNav.vue'
 export default {
-    
+    components:{
+        TopNav
+    },
+    setup(){
+        
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -20,11 +24,5 @@ img{
     float: right;
     margin-right: 60px;
 }
-.topnav{
-    height: 60px;
-    display: flex;
-    h3{
-        display: inline-block; 
-    }
-}
+
 </style>
