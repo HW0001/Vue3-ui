@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import './assets/normalize.css'
+import './lib/golu.scss'
 import "./index.scss"
+import App from './App.vue'
+// import './assets/normalize.css'
 import router from './router'
 
 const app = createApp(App)
