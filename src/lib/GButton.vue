@@ -71,14 +71,14 @@ export default {
   }
   &.gbutton-danger {
     background-color: rgb(255, 77, 79);
-    color: #fff;
+    color: #fff; 
+    &:hover {
+      background-color: rgb(255, 120, 117);
+    }
     &[link] {
       border: none;
       background: transparent;
       color: rgb(255, 77, 79);
-    }
-    &:hover {
-      background-color: rgb(255, 120, 117);
     }
   }
   &[disabled] {
