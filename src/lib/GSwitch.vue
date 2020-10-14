@@ -6,11 +6,11 @@ import { ref } from "vue";
 export default {
   props: {
     value: Boolean,
-    disable:Boolean
+    disabled:Boolean
   },
   setup(props, context) { 
     const toogle = () => {
-        if(!props.disable)
+        if(!props.disabled)
       context.emit("update:value", !props.value);
     };
     return {
@@ -46,9 +46,6 @@ $h2: $h1 - 4px;
     .golu-stitch-span {
       left: calc(100% - #{$h2} - 2px);
     }
-  }
-  &:focus {
-    outline: none;
   } 
  &:active{
      .golu-stitch-span{
