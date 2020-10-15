@@ -12,12 +12,14 @@
             </p> 
         </template>
     </g-dialog>
+    <g-button @click="dialogfn"> 调用方法出现dialog</g-button>
     </div>
 </template>
 <script lang=ts>
 import { ref } from 'vue'
 import GDialog from '../lib/GDialog.vue'
 import GButton from '../lib/GButton.vue'
+import {openGDialog} from '../lib/openGDialog'
 export default {
     components:{GDialog,GButton},
     setup(){
@@ -31,8 +33,16 @@ export default {
         const toggle = ()=>{
             visible.value=!visible.value
         }
+        const dialogfn = ()=>{
+            openGDialog({
+               type:"center" ,
+               isGlobalClose:false,
+               title:"title hhh",
+               content:"content jajjaja"
+            })
+        }
         return{
-            okfn,cancel,visible,toggle
+            okfn,cancel,visible,toggle,dialogfn
         }
     }
 }
