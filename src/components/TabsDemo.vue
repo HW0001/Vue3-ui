@@ -1,10 +1,13 @@
 <template>
     <div>
-        我是tabs
+        <g-tabs />
     </div>
 </template>
 <script lang=ts>
+import GTabs from '../lib/GTabs.vue'
 export default {
-    
+    components:{
+        GTabs
+    }
 }
 </script>
