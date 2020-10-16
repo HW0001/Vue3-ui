@@ -37,8 +37,17 @@ export default {
             openGDialog({
                type:"center" ,
                isGlobalClose:false,
-               title:"title hhh",
-               content:"content jajjaja"
+               title:"代码打开的dialog",
+               content:"尝试下打开dialog",
+               visible:true,
+               okfn:()=>{
+                   console.log(22)
+                   return false
+               },
+               cancel:()=>{
+                   console.log(33)
+                   return true
+               }
             })
         }
         return{
