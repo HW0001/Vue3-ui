@@ -12,6 +12,7 @@
             </p> 
         </template>
     </g-dialog>
+    <hr>
     <g-button @click="dialogfn"> 调用方法出现dialog</g-button>
     </div>
 </template>
