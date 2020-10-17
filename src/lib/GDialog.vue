@@ -99,6 +99,7 @@ export default {
     font-size: 16px;
     line-height: 22px;
     position: relative;
+    border-bottom: 1px solid #e8e8e8;
     .golu-dialog-close {
       display: inline-block;
       text-align: center;
@@ -116,6 +117,7 @@ export default {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.65);
     font-variant: tabular-nums;
+    border-bottom: 1px solid #e8e8e8;
   }
   .golu-dialog-footer {
     padding: 10px 20px;
