@@ -1,20 +1,26 @@
 <template>
 <div class="golu-tabs-nav" ref="nav">
-    <div class="golu-tabs-item" v-for="(item, index) in title" :key="index" :class="{ selected: index === selectindex}" @click="selectindex = index" :ref="el => { if (el) divs[index] = el }">
+    <div class="golu-tabs-item" v-for="(item, index) in title" :key="index" :class="{ selected: index === selectindex }" @click="selectindex = index" :ref="
+        (el) => {
+          if (index === selectindex) currentdiv = el;
+        }
+      ">
         {{ item }}
     </div>
     <div class="golu-tabs-underline" ref="underline"></div>
 </div>
-<div>
-    <component :is="currentslot" :key="currentslot.props.title" />
-</div>
+<component :is="currentslot" :key="currentslot.props.title"></component>
+<div></div>
 </template>
 
 <script lang="ts">
 import {
     onMounted,
     onUpdated,
-    ref
+    ref,
+    RendererElement,
+    RendererNode,
+    watchEffect,
 } from "vue";
 import GTab from "./Gtab.vue";
 export default {
@@ -23,34 +29,32 @@ export default {
         const allcomponents = context.slots.default();
         const title = allcomponents.map((e) => e.props.title);
         const selectindex = ref(0);
-        const nav = ref < HTMLDivElement > (null)
-        const divs = ref < HTMLDivElement[] > ([])
-        const current = ref < HTMLDivElement > (null)
-        const underline = ref(null)
-        const currentslot = allcomponents[selectindex.value]
-        const underlineAnimate = () => {
-            current.value = divs.value.filter(e => e.classList.contains("selected"))[0]
-            underline.value.style.width = current.value.getBoundingClientRect().width + "px"
-            underline.value.style.left = (current.value.getBoundingClientRect().left - nav.value.getBoundingClientRect().left) + "px"
-        }
+        const nav = ref < HTMLDivElement > (null);
+        const currentdiv = ref < HTMLDivElement > (null);
+        const currentslot = ref < RendererNode > (null);
+        const underline = ref(null);
         if (allcomponents.some((e) => e.type !== GTab)) {
             throw new Error("子组件加载错误");
         }
-        onMounted(() => {
-            underlineAnimate()
-        })
-        onUpdated(() => {
-            underlineAnimate()
-        })
+        const x = () => {
+            underline.value.style.width =
+                currentdiv.value.getBoundingClientRect().width + "px";
+            underline.value.style.left =
+                currentdiv.value.getBoundingClientRect().left -
+                nav.value.getBoundingClientRect().left +
+                "px";
+        }
+        watchEffect(() => {
+            currentslot.value = allcomponents[selectindex.value];
+            x
+        });
         return {
             title,
             selectindex,
             nav,
-            divs,
             underline,
-            underlineAnimate,
-            current,
-            currentslot
+            currentdiv,
+            currentslot,
         };
     },
 };
