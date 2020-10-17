@@ -36,8 +36,7 @@ export default {
         default:true
     }
   },
-  setup(props, context) {
-      console.log(props.type)
+  setup(props, context) { 
     const close = () => {
       context.emit("update:visible", false);
     };
