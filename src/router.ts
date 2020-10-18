@@ -7,6 +7,7 @@ import SwitchDemo from './components/SwitchDemo.vue'
 import ButtonDemo from './components/ButtonDemo.vue'
 import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
+import MenuDemo from './components/MenuDemo.vue'
 
 const history=createWebHistory()
 const router=createRouter({
@@ -21,7 +22,8 @@ const router=createRouter({
             {path:'/switch',component:SwitchDemo},
             {path:'/button',component:ButtonDemo},
             {path:'/dialog',component:DialogDemo},
-            {path:'/tabs',component:TabsDemo}
+            {path:'/tabs',component:TabsDemo},
+            {path:'/menu',component:MenuDemo}
         ]
     }]
 }) 

@@ -1,40 +1,62 @@
 <template>
-    <div class="asidecontent">
-        <h2>ui组件</h2>
-        <ol>
-        <li><router-link to='switch'>switch</router-link></li>
-        <li><router-link to='button'>button</router-link></li>
-        <li><router-link to='dialog'>dialog</router-link></li>
-        <li><router-link to='tabs'>tabsgit</router-link></li> 
-        </ol>
-    </div>
+<div class="asidecontent">
+    <h2>ui组件</h2>
+    <g-menu>
+        <g-menu-group-item>
+            <template v-slot:title> <span>使用</span> </template>
+            <g-menu-item to="1">1.1</g-menu-item>
+            <g-menu-item to="2">1.2</g-menu-item>
+        </g-menu-group-item>
+        <g-menu-group-item>
+            <template v-slot:title> <span>组件</span></template>
+            <g-menu-item to="switch">switch</g-menu-item>
+            <g-menu-item to="button">button</g-menu-item>
+            <g-menu-item to="dialog">dialog</g-menu-item>
+            <g-menu-item to="tabs">tabs</g-menu-item>
+            <g-menu-item to="menu">menu</g-menu-item>
+        </g-menu-group-item>
+    </g-menu>
+</div>
 </template>
+
 <script lang="ts">
-import { inject, Ref } from 'vue';
+import {
+    inject,
+    Ref
+} from 'vue';
+import GMenu from '../lib/GMenu.vue'
+import GMenuGroupItem from '../lib/GMenuGroupItem.vue'
+import GMenuItem from '../lib/GMenuItem.vue'
 import router from '../router'
-    export default{
-        setup(){     
-            const asidevisib = inject<Ref<boolean>>("asidevis"); 
-            const clientwidth=document.documentElement.clientWidth
-            router.afterEach(()=>{ 
-                if(clientwidth<=500)
-                asidevisib.value=!asidevisib.value
-            })     
-            return{
-                
-            }
-        }
-       
+import component from '*.vue';
+export default {
+    setup() {
+        const asidevisib = inject < Ref < boolean >> ("asidevis");
+        const clientwidth = document.documentElement.clientWidth
+        router.afterEach(() => {
+            if (clientwidth <= 500)
+                asidevisib.value = !asidevisib.value
+        })
+
+    },
+    components: {
+        GMenu,
+        GMenuGroupItem,
+        GMenuItem
     }
+}
 </script>
+
 <style lang="scss" scoped>
-.asidecontent{
+.asidecontent {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    ol{
+
+    ol {
         padding-left: 10px;
-        >li{
+
+        >li {
             margin-bottom: 15px;
         }
     }
