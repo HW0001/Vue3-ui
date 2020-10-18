@@ -1,5 +1,5 @@
 <template>
-<li class="golu-menu-item-li" @click="liclick">
+<li class="golu-menu-item-li" :class="{selected}">
     <a :href="to">
         <slot />
     </a>
@@ -7,15 +7,14 @@
 </template>
 
 <script lang="ts">
+import router from '../router'
 export default {
     setup(props, context) {
         const to = context.attrs.to
-        const liclick = () => {
-            console.log(context.attrs)
-        }
+        const selected = router.currentRoute.value.matched.some(e => e.path.substring(1) === to)
         return {
-            liclick,
-            to
+            to,
+            selected
         }
     }
 }
@@ -23,9 +22,22 @@ export default {
 
 <style lang="scss">
 .golu-menu-item-li {
-    margin-bottom: 10px;
+    padding: 10px 20px 10px 10px;
     font-size: 14px;
     font-weight: 400;
-    cursor: pointer;
+    width: 100%;
+
+    &.selected {
+        background-color: rgb(230, 247, 255);
+        border-right: 2px solid rgb(24, 144, 255);
+
+        a {
+            color: rgb(71, 168, 255);
+        }
+    }
+
+    a {
+        cursor: pointer;
+    }
 }
 </style>

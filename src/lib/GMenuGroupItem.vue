@@ -5,7 +5,7 @@
     </div>
     <span class="golu-menu-shrink" :class="{angle:!shrink}"></span>
 </div>
-<ol class="golu-menu-group-ol" :class="{golumenuhide:shrink}" ref='menuol'>
+<ol class="golu-menu-group-ol" :class="{golumenuhide:shrink}">
     <slot />
 </ol>
 </template>
@@ -17,11 +17,8 @@ import {
 export default {
     setup() {
         const shrink = ref(false)
-        const menuol = ref(null)
-
         return {
-            shrink,
-            menuol
+            shrink
         }
     }
 }
@@ -30,13 +27,13 @@ export default {
 <style lang="scss">
 .golu-menu-group {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 10px;
 
     .golu-menu-group-title {
         display: inline-block;
         vertical-align: middle;
-        margin-right: 10px;
+        margin-right: 30px;
         cursor: pointer;
     }
 
@@ -74,6 +71,7 @@ export default {
     display: inline-block;
     margin-bottom: 10px;
     margin-left: 10px;
+    width: 100%;
     transition: all 1s ease-out;
 
     &.golumenuhide {

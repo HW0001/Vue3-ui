@@ -1,6 +1,6 @@
 <template>
 <div class="asidecontent">
-    <h2>ui组件</h2>
+    <h2>轮子组件</h2>
     <g-menu>
         <g-menu-group-item>
             <template v-slot:title> <span>使用</span> </template>

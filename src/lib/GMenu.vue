@@ -5,10 +5,13 @@
 </template>
 
 <script lang="ts">
+import {
+    ref
+} from 'vue'
 export default {
     setup(props, context) {
         const firsteles = context.slots.default()
-        console.log(firsteles)
+        const selectItem = ref(null)
         return {
             firsteles
         }
