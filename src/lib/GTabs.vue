@@ -46,8 +46,13 @@ export default {
         }
         watchEffect(() => {
             currentslot.value = allcomponents[selectindex.value];
-            x
         });
+        onMounted(() => {
+            x()
+        })
+        onUpdated(() => {
+            x()
+        })
         return {
             title,
             selectindex,
