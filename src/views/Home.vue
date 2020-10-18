@@ -1,6 +1,6 @@
 <template>
 <div class="topnavcontenor">
-    <top-nav />
+    <top-nav :isVisiblleIcon="false" />
     <div class="content">
         <img src="../assets/logo.png" />
         <p>一个基于vue3打造的自定义组件项目，</p>

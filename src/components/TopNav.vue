@@ -1,6 +1,6 @@
 <template>
 <div class="topnav">
-    <span class="micon" @click="toggleVisidle" v-if="visibleMenu">
+    <span class="micon" @click="toggleVisidle" v-if="isVisiblleIcon">
         <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-caidan"></use>
         </svg></span>
@@ -28,15 +28,16 @@ import {
 import router from '../router';
 import component from '*.vue';
 export default {
+    props: {
+        isVisiblleIcon: Boolean
+    },
     setup(props, context) {
         const asidecis = inject < Ref < boolean >> ("asidevis");
         const toggleVisidle = () => {
             asidecis.value = !asidecis.value;
         };
-        const visibleMenu = computed(() => router.currentRoute.value.matched.some(e => e.path === "/doc"))
         return {
-            toggleVisidle,
-            visibleMenu
+            toggleVisidle
         };
     },
 };

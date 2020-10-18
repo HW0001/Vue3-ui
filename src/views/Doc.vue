@@ -1,6 +1,6 @@
 <template>
 <div class="doc">
-    <top-nav />
+    <top-nav :isVisiblleIcon="true" />
     <div class="content">
         <aside class="asidediv" v-if="asidevisib">
             <aside-list></aside-list>
