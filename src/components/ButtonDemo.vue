@@ -1,35 +1,26 @@
 <template>
     <div>
-        <p>butto主题</p>
-        <g-button>默认</g-button>
-        <g-button @click="onClick" theme="primary">主按钮</g-button>
-        <g-button theme="dashed">次按钮</g-button>
-        <g-button theme="danger">危险按钮</g-button>
-        <p>butto类别</p>
-        <g-button link>Link</g-button>
-        <g-button link theme="primary" >Link</g-button>
-        <g-button link theme="danger">Link</g-button>
-        <g-button link theme="dashed">Link</g-button>
-        <g-button @click="onClick" disabled>禁用</g-button>
-        <g-button theme="primary" loading>加载中</g-button>
-        <p>butto尺寸</p>
-        <g-button @click="onClick" theme="primary" size='big'>大按钮</g-button>
-        <g-button @click="onClick" theme="primary">默认按钮</g-button>
-        <g-button @click="onClick" theme="primary" size='small'>小按钮</g-button>
+      <demo title="主题" :content="content1" :component="Button01" :code="code1"></demo>
+      <demo title="类别" :content="content2" :component="Button02" :code="code2"></demo>
+      <demo title="尺寸" :content="content3" :component="Button03" :code="code3"></demo>
     </div>
 </template>
 <script lang=ts>
-import GButton from '../lib/GButton.vue'
+import Button01 from './Button01.vue'
+import Button02 from './Button02.vue'
+import Button03 from './Button03.vue'
+import Demo from './Demo.vue'
+import {code as code1,content as content1} from './js/button01'
+import {code as code2,content as content2} from './js/button02'
+import {code as code3,content as content3} from './js/button03'
 export default {
-    components:{
-        GButton
-    },
+  components:{
+    Demo
+  },
     setup(props) {
-        const onClick=()=>{
-            console.log(1)
-        } 
         return{
-            onClick
+          Button01,Button02,Button03,code1,code2,code3,
+          content1,content2,content3
         }
     }
 }
