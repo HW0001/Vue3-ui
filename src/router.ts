@@ -12,6 +12,10 @@ import GMenuContentDemo1 from './components/GMenuView/GMenuContentDemo1.vue'
 import GMenuContentDemo2 from './components/GMenuView/GMenuContentDemo2.vue'
 import GMenuContentDemo3 from './components/GMenuView/GMenuContentDemo3.vue'
 import GMenuContentDemo4 from './components/GMenuView/GMenuContentDemo4.vue'
+import Introduce from "./components/Introduce.vue"
+import Install from "./components/Install.vue"
+import StartUse from "./components/StartUse.vue"
+
 const history=createWebHistory()
 const router=createRouter({
     history,
@@ -22,18 +26,22 @@ const router=createRouter({
         path:'/home',component:Home
     },{
         path:'/doc',component:Doc,children:[
-            {path:'/switch',component:SwitchDemo},
-            {path:'/button',component:ButtonDemo},
-            {path:'/dialog',component:DialogDemo},
-            {path:'/tabs',component:TabsDemo},
-            {path:'/menu',component:MenuDemo,children:[{
-                path:"/menudame1",component:GMenuContentDemo1
+            {path:'',redirect:"/doc/introduce"},
+            {path:'/doc/introduce',component:Introduce},
+            {path:'/doc/install',component:Install},
+            {path:'/doc/startuse',component:StartUse},
+            {path:'/doc/switch',component:SwitchDemo},
+            {path:'/doc/button',component:ButtonDemo},
+            {path:'/doc/dialog',component:DialogDemo},
+            {path:'/doc/tabs',component:TabsDemo},
+            {path:'/doc/menu',component:MenuDemo,children:[{
+                path:"/doc/menu/menudame1",component:GMenuContentDemo1
             },{
-                path:"/menudame2",component:GMenuContentDemo2
+                path:"/doc/menu/menudame2",component:GMenuContentDemo2
             },{
-                path:"/menudame3",component:GMenuContentDemo3
+                path:"/doc/menu/menudame3",component:GMenuContentDemo3
             },{
-                path:"/menudame4",component:GMenuContentDemo4
+                path:"/doc/menu/menudame4",component:GMenuContentDemo4
             }]}
         ]
     }]

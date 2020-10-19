@@ -4,16 +4,17 @@
     <g-menu>
         <g-menu-group-item>
             <template v-slot:title> <span>使用</span> </template>
-            <g-menu-item to="1">1.1</g-menu-item>
-            <g-menu-item to="2">1.2</g-menu-item>
+            <g-menu-item to="/doc/introduce">介绍</g-menu-item>
+            <g-menu-item to="/doc/install">安装</g-menu-item>
+            <g-menu-item to="/doc/startuse">使用</g-menu-item>
         </g-menu-group-item>
         <g-menu-group-item>
             <template v-slot:title> <span>组件</span></template>
-            <g-menu-item to="switch">switch</g-menu-item>
-            <g-menu-item to="button">button</g-menu-item>
-            <g-menu-item to="dialog">dialog</g-menu-item>
-            <g-menu-item to="tabs">tabs</g-menu-item>
-            <g-menu-item to="menu">menu</g-menu-item>
+            <g-menu-item to="/doc/switch">switch</g-menu-item>
+            <g-menu-item to="/doc/button">button</g-menu-item>
+            <g-menu-item to="/doc/dialog">dialog</g-menu-item>
+            <g-menu-item to="/doc/tabs">tabs</g-menu-item>
+            <g-menu-item to="/doc/menu">menu</g-menu-item>
         </g-menu-group-item>
     </g-menu>
 </div>

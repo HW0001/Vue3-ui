@@ -1,8 +1,8 @@
 <template>
 <li class="golu-menu-item-li" :class="{selected}">
-    <a :href="to">
+    <router-link :to="to">
         <slot />
-    </a>
+    </router-link>
 </li>
 </template>
 

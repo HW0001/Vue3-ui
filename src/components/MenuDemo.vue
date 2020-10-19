@@ -3,13 +3,13 @@
     <g-menu>
         <g-menu-group-item>
             <template v-slot:title> <span>第一项</span> </template>
-            <g-menu-item to="menudame1">1.1</g-menu-item>
-            <g-menu-item to="menudame2">1.2</g-menu-item>
+            <g-menu-item to="/doc/menu/menudame1">1.1</g-menu-item>
+            <g-menu-item to="/doc/menu/menudame2">1.2</g-menu-item>
         </g-menu-group-item>
         <g-menu-group-item>
             <template v-slot:title> <span>第二项</span></template>
-            <g-menu-item to="menudame3">2.1</g-menu-item>
-            <g-menu-item to="menudame4">2.2</g-menu-item>
+            <g-menu-item to="/doc/menu/menudame3">2.1</g-menu-item>
+            <g-menu-item to="/doc/menu/menudame4">2.2</g-menu-item>
         </g-menu-group-item>
     </g-menu>
 </div>
