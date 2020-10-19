@@ -1,24 +1,28 @@
 <template>
-    <div>
-        <p> 添加disable属性 则可以禁用switch的点击事件</p>
-       <g-switch v-model:value="disabledbool" disabled/>
-        <p>disable为false或不添加disabled，则可以点击</p>
-       <g-switch v-model:value="bool" />
-    </div>
+<div>
+    <demo title="禁用点击" :component="Switch01"></demo>
+    <hr />
+    <demo title="默认" :component="Switch02"></demo>
+</div>
 </template>
-<script lang=ts>
-import { ref } from 'vue'
+
+<script>
+import {ref} from 'vue'
 import GSwitch from '../lib/GSwitch.vue'
+import Demo from './Demo.vue'
+import Switch01 from './Switch01.vue'
+import Switch02 from './Switch02.vue'
 export default {
-    components:{
-        GSwitch
+    components: {
+        GSwitch,Demo
     },
     setup(props) {
-        const disabledbool=ref(false)
-        const bool=ref(false)
-        return{
+        const value = ref(false)
+        const bool = ref(false)
+        return {
             bool,
-            disabledbool
+             value,
+          Switch01,Switch02
         }
     }
 }

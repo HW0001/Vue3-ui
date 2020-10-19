@@ -6,7 +6,6 @@
             <aside-list></aside-list>
         </aside>
         <main class="maindiv">
-            内容区域
             <router-view />
         </main>
     </div>

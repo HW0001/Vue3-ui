@@ -1,5 +1,5 @@
 <template>
-  <button class="golu-stitch-button" :class="{checked: value }"><span class="golu-stitch-span" @click="toogle"></span></button>
+  <button class="golu-stitch-button" :class="{checked: value }"><span class="golu-stitch-span" @click="toggle"></span></button>
 </template>
 <script lang="ts">
 import { ref } from "vue";
@@ -9,12 +9,12 @@ export default {
     disabled:Boolean
   },
   setup(props, context) { 
-    const toogle = () => {
+    const toggle = () => {
         if(!props.disabled)
       context.emit("update:value", !props.value);
     };
     return {
-      toogle,
+       toggle
     };
   },
 };
