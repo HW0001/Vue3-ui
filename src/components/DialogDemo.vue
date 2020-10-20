@@ -1,58 +1,20 @@
 <template>
-    <div> 
-    <h3>dialog示例</h3>
-    <g-button theme="primary" @click="toggle">toggle</g-button>
-    <g-dialog :okfn="okfn" :cancel="cancel" v-model:visible="visible" type="top" isGlobalClose >
-        <template v-slot:title>
-            <div> 我是外面的div
-            </div>
-        </template>
-        <template v-slot:content>
-            <p> p我是外面的内容sx撒旦水水水水但是但是
-            </p> 
-        </template>
-    </g-dialog>
-    <hr>
-    <g-button @click="dialogfn"> 调用方法出现dialog</g-button>
+    <div>
+      <demo title="默认" :content="content1" :component="Dialog01" :code="code1"></demo>
+      <demo title="默认" :content="content2" :component="Dialog02" :code="code2"></demo>
     </div>
 </template>
 <script lang=ts>
-import { ref } from 'vue'
-import GDialog from '../lib/GDialog.vue'
-import GButton from '../lib/GButton.vue'
-import {openGDialog} from '../lib/openGDialog'
+import Dialog01 from './Dialog01.vue'
+import Dialog02 from './Dialog02.vue'
+import  Demo from './Demo.vue'
+import {code as code1,content as content1} from './js/dialog01'
+import {code as code2,content as content2} from './js/dialog02'
 export default {
-    components:{GDialog,GButton},
+    components:{Demo},
     setup(){
-        const okfn = ()=>{ 
-            return false
-        }
-        const cancel = ()=>{
-             return true
-        }
-        const visible =ref(false)
-        const toggle = ()=>{
-            visible.value=!visible.value
-        }
-        const dialogfn = ()=>{
-            openGDialog({
-               type:"center" ,
-               isGlobalClose:false,
-               title:"代码打开的dialog",
-               content:"尝试下打开dialog",
-               visible:true,
-               okfn:()=>{
-                   console.log(22)
-                   return false
-               },
-               cancel:()=>{
-                   console.log(33)
-                   return true
-               }
-            })
-        }
         return{
-            okfn,cancel,visible,toggle,dialogfn
+          Dialog01,Dialog02,code1,code2,content1,content2
         }
     }
 }

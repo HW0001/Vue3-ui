@@ -1,29 +1,21 @@
 <template>
 <div>
-    <g-tabs>
-        <g-tab title="导航ssssss一">
-            我是demo1
-        </g-tab>
-        <g-tab title="导航二">
-            我是demo2
-        </g-tab>
-    </g-tabs>
+<demo title="tabs" :component="Tabs01"  :code="code1" :content="content1"></demo>
 </div>
 </template>
 
 <script>
-import GTabs from '../lib/GTabs.vue'
-import GTab from '../lib/Gtab.vue'
+import  Tabs01 from './Tabs01.vue'
+import  Demo from './Demo.vue'
+import {code as code1,content as content1} from './js/tabs'
 export default {
     components: {
-        GTabs,
-        GTab,
-        Dame01: {
-            template: `<div>我是demo1</div>`
-        },
-        Dame02: {
-            template: `<div>我是demo2</div>`
-        }
-    }
+      Demo
+    },
+  setup(){
+      return{
+        Tabs01,code1,content1
+      }
+  }
 }
 </script>

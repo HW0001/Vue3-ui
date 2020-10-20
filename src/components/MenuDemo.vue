@@ -1,33 +1,21 @@
 <template>
 <div>
-    <g-menu>
-        <g-menu-group-item>
-            <template v-slot:title> <span>第一项</span> </template>
-            <g-menu-item to="/doc/menu/menudame1">1.1</g-menu-item>
-            <g-menu-item to="/doc/menu/menudame2">1.2</g-menu-item>
-        </g-menu-group-item>
-        <g-menu-group-item>
-            <template v-slot:title> <span>第二项</span></template>
-            <g-menu-item to="/doc/menu/menudame3">2.1</g-menu-item>
-            <g-menu-item to="/doc/menu/menudame4">2.2</g-menu-item>
-        </g-menu-group-item>
-    </g-menu>
-</div>
-<div>
-    演示demo：
-    <router-view />
+  <demo title="tabs" :component="Menu01"  :code="code1" :content="content1"></demo>
 </div>
 </template>
 
 <script lang="ts">
-import GMenu from '../lib/GMenu.vue'
-import GMenuGroupItem from '../lib/GMenuGroupItem.vue'
-import GMenuItem from '../lib/GMenuItem.vue'
+import  Menu01 from './Menu01.vue'
+import  Demo from './Demo.vue'
+import {code as code1,content as content1} from './js/menu01'
 export default {
-    components: {
-        GMenu,
-        GMenuGroupItem,
-        GMenuItem
+  components: {
+    Demo
+  },
+  setup(){
+    return{
+      Menu01,code1,content1
     }
+  }
 }
 </script>

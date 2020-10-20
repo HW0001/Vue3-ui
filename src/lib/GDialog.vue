@@ -69,14 +69,14 @@ export default {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 10;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.45);
 }
 .golu-dialog {
   position: fixed;
   left: 50%;  
   background-color: #fff;
-  z-index: 11;
+  z-index: 1000;
   min-width: 350px;
   border-radius: 4px;
   &.top{
