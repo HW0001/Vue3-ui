@@ -1,20 +1,19 @@
 <template>
 <div class="topnav">
-    <span class="micon" @click="toggleVisidle" v-if="isVisiblleIcon">
+    <span class="micon" @click="toggleVisidle" v-if="VisiblleIcon">
         <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-caidan"></use>
         </svg></span>
     <div class="logo">
         <router-link to='/home'>
             <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-gulu"></use>
+                <use xlink:href="#icon-yuanquanquan"></use>
             </svg>
             <span>轮子组件</span>
         </router-link>
     </div>
     <div class="funcs">
-        <span>菜单一</span>
-        <span>菜单二</span>
+        <span  link theme="primary"  v-if="!VisiblleIcon"><router-link to="/doc/switch">文档</router-link> </span>
     </div>
 </div>
 </template>
@@ -29,7 +28,8 @@ import router from '../router';
 import component from '*.vue';
 export default {
     props: {
-        isVisiblleIcon: Boolean
+        VisiblleIcon: Boolean,
+
     },
     setup(props, context) {
         const asidecis = inject < Ref < boolean >> ("asidevis");
@@ -91,6 +91,10 @@ export default {
         top: 0px;
         display: flex;
         align-items: center;
+      a{
+        font-size: 18px;
+        font-weight: 600;
+      }
     }
 
     @media (max-width:500px) {

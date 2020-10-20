@@ -12,7 +12,7 @@
 
 <style lang="scss" scoped>
 div {
-    width: 400px;
+  width: 80%;
 }
 
 .back {

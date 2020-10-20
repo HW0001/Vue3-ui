@@ -1,6 +1,6 @@
 <template>
 <div class="doc">
-    <top-nav :isVisiblleIcon="true" />
+    <top-nav :VisiblleIcon="true" />
     <div class="content">
         <aside class="asidediv" v-if="asidevisib">
             <aside-list></aside-list>
@@ -48,6 +48,7 @@ export default {
         .maindiv {
             padding-left: 50px;
             min-width: 50%;
+            margin-top: 50px;
         }
     }
 }
