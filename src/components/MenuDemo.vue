@@ -1,6 +1,6 @@
 <template>
 <div>
-  <demo title="tabs" :component="Menu01"  :code="code1" :content="content1"></demo>
+  <demo title="menu菜单" :component="Menu01"  :code="code1" :content="content1"></demo>
 </div>
 </template>
 

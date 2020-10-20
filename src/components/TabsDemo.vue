@@ -1,6 +1,6 @@
 <template>
 <div>
-<demo title="tabs" :component="Tabs01"  :code="code1" :content="content1"></demo>
+<demo title="标签" :component="Tabs01"  :code="code1" :content="content1"></demo>
 </div>
 </template>
 

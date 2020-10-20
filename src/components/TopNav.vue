@@ -48,7 +48,7 @@ export default {
     height: 60px;
     width: 100%;
     position: relative;
-
+  background: linear-gradient(145deg, rgba(222, 251, 250, 1) 0%, rgba(185, 229, 232, 1) 100%);
     .micon {
         position: absolute;
         top: 20px;
