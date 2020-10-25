@@ -6,14 +6,13 @@
         </svg></span>
     <div class="logo">
         <router-link to='/home'>
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-yuanquanquan"></use>
-            </svg>
-            <span>轮子组件</span>
+            <span>MyUi</span>
         </router-link>
     </div>
     <div class="funcs">
-        <span  link theme="primary"  v-if="!VisiblleIcon"><router-link to="/doc/switch">文档</router-link> </span>
+        <span link theme="primary" v-if="!VisiblleIcon">
+            <router-link to="/doc/switch">文档</router-link>
+        </span>
     </div>
 </div>
 </template>
@@ -24,7 +23,6 @@ import {
     inject,
     Ref
 } from "vue";
-import router from '../router';
 import component from '*.vue';
 export default {
     props: {
@@ -48,7 +46,7 @@ export default {
     height: 60px;
     width: 100%;
     position: relative;
-  background: linear-gradient(145deg, rgba(222, 251, 250, 1) 0%, rgba(185, 229, 232, 1) 100%);
+
     .micon {
         position: absolute;
         top: 20px;
@@ -65,21 +63,16 @@ export default {
         position: absolute;
         left: 30px;
         top: 10px;
+        display: inline-flex;
+        align-items: center;
 
         a {
-            svg {
-                width: 32px;
-                height: 32px;
-                vertical-align: middle;
-            }
-
             span {
                 vertical-align: middle;
                 color: #273849;
                 font-weight: 400;
                 font-size: 18px;
                 margin-left: 5px;
-                font-style: italic;
             }
         }
     }
@@ -89,12 +82,13 @@ export default {
         position: absolute;
         right: 150px;
         top: 0px;
-        display: flex;
+        display: inline-flex;
         align-items: center;
-      a{
-        font-size: 18px;
-        font-weight: 600;
-      }
+
+        a {
+            font-size: 18px;
+            font-weight: 600;
+        }
     }
 
     @media (max-width:500px) {

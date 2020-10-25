@@ -26,22 +26,6 @@
             <span>使用typescript语法</span>
         </div>
     </div>
-    <div>
-        <div>
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-typescript"></use>
-            </svg>
-            <span>广告位招租</span>
-        </div>
-    </div>
-    <div>
-        <div>
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-typescript"></use>
-            </svg>
-            <span>广告位招租</span>
-        </div>
-    </div>
 </div>
 </template>
 
@@ -56,9 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .topnavcontenor {
-    background: linear-gradient(145deg, rgba(222, 251, 250, 1) 0%, rgba(185, 229, 232, 1) 100%);
     padding-bottom: 100px;
-    clip-path: ellipse(100% 90% at 50% 0);
 
     .content {
         display: flex;
@@ -68,7 +50,7 @@ export default {
         padding-top: 30px;
 
         img {
-            width: 200px;
+            width: 150px;
         }
 
         a {
@@ -90,7 +72,7 @@ export default {
 
     >div {
         width: 32%;
-        height: 150px;
+        padding: 10px 0;
 
         >div {
             width: 280px;

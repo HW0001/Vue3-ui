@@ -1,10 +1,6 @@
 <template>
 <div>
-    <p>
-        npm 导入
-
-        yarm 导入
-    </p>
+    <p>npm 安装：</p>
     <router-link class="back" to="/doc/introduce">←介绍</router-link>
     <router-link class="next" to="/doc/startuse">使用 →</router-link>
 </div>
@@ -12,7 +8,7 @@
 
 <style lang="scss" scoped>
 div {
-  width: 80%;
+    width: 80%;
 }
 
 .back {

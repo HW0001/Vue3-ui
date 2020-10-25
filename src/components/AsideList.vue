@@ -34,10 +34,11 @@ export default {
         const asidevisib = inject < Ref < boolean >> ("asidevis");
         const clientwidth = document.documentElement.clientWidth
         router.afterEach(() => {
-            if (clientwidth <= 500)
-                asidevisib.value = !asidevisib.value
-        })
+            if (clientwidth <= 500) {
+                asidevisib.value = false
+            }
 
+        })
     },
     components: {
         GMenu,
