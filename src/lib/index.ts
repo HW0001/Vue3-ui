@@ -1,0 +1,10 @@
+export {default as GButton} from './GButton.vue'
+export {default as GDialog} from './GDialog.vue'
+export {default as GMenu} from './GMenu.vue'
+export {default as GMenuGroupItem} from './GMenuGroupItem.vue'
+export {default as GMenuItem} from './GMenuItem.vue'
+export {default as GSwitch} from './GSwitch.vue'
+export {default as GTab} from './Gtab.vue'
+export {default as GTabs} from './GTabs.vue'
+export {openGDialog as openGDialog} from './openGDialog' 
+
