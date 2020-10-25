@@ -1,11 +1,11 @@
 {
-  "name": "g-mc-ui",
+  "name": "gmc-ui-01",
   "version": "0.0.0",
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/mcui.js",
-  "module": "dist/lib/mcui.esm.js",
+  "main": "dist/lib/gmc-ui.js",
+  "module": "dist/lib/gmc-ui.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

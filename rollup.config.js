@@ -12,13 +12,13 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'MCui',
-    file: 'dist/lib/mcui.js',
+    name: 'gmc-ui',
+    file: 'dist/lib/gmc-ui.js',
     format: 'umd',
     plugins: [terser()]
   }, {
-    name: 'MCui',
-    file: 'dist/lib/mcui.esm.js',
+    name: 'gmc-ui',
+    file: 'dist/lib/gmc-ui.esm.js',
     format: 'es',
     plugins: [terser()]
   }],
