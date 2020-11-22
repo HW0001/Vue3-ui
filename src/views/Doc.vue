@@ -14,8 +14,8 @@
 
 <script lang="ts">
 import { inject, Ref } from "vue";
-import TopNav from "../components/TopNav.vue";
-import AsideList from "../components/AsideList.vue";
+import TopNav from "../components/common/TopNav.vue";
+import AsideList from "../components/common/AsideList.vue";
 export default {
   setup() {
     const asidevisib = inject<Ref<boolean>>("asidevis");

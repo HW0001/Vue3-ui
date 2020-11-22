@@ -13,6 +13,7 @@
         <g-menu-item to="/doc/button">button</g-menu-item>
         <g-menu-item to="/doc/dialog">dialog</g-menu-item>
         <g-menu-item to="/doc/tabs">tabs</g-menu-item>
+        <g-menu-item to="/doc/checkbox">checkbox</g-menu-item>
       </g-menu-group-item>
     </g-menu>
   </div>
@@ -20,10 +21,10 @@
 
 <script lang="ts">
 import { inject, Ref } from "vue";
-import GMenu from "../lib/GMenu.vue";
-import GMenuGroupItem from "../lib/GMenuGroupItem.vue";
-import GMenuItem from "../lib/GMenuItem.vue";
-import router from "../router";
+import GMenu from "./GMenu.vue";
+import GMenuGroupItem from "./GMenuGroupItem.vue";
+import GMenuItem from "./GMenuItem.vue";
+import router from "../../router";
 import component from "*.vue";
 export default {
   setup() {

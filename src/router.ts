@@ -7,14 +7,10 @@ import SwitchDemo from './components/SwitchDemo.vue'
 import ButtonDemo from './components/ButtonDemo.vue'
 import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
-import MenuDemo from './components/MenuDemo.vue'
-import GMenuContentDemo1 from './components/GMenuView/GMenuContentDemo1.vue'
-import GMenuContentDemo2 from './components/GMenuView/GMenuContentDemo2.vue'
-import GMenuContentDemo3 from './components/GMenuView/GMenuContentDemo3.vue'
-import GMenuContentDemo4 from './components/GMenuView/GMenuContentDemo4.vue'
 import Introduce from "./components/Introduce.vue"
 import Install from "./components/Install.vue"
 import StartUse from "./components/StartUse.vue"
+import CheckBoxDemo from './components/CheckBoxDemo.vue'
 
 const history=createWebHistory()
 const router=createRouter({
@@ -33,16 +29,8 @@ const router=createRouter({
             {path:'/doc/switch',component:SwitchDemo},
             {path:'/doc/button',component:ButtonDemo},
             {path:'/doc/dialog',component:DialogDemo},
-            {path:'/doc/tabs',component:TabsDemo},
-            {path:'/doc/menu',component:MenuDemo,children:[{
-                path:"/doc/menu/menudame1",component:GMenuContentDemo1
-            },{
-                path:"/doc/menu/menudame2",component:GMenuContentDemo2
-            },{
-                path:"/doc/menu/menudame3",component:GMenuContentDemo3
-            },{
-                path:"/doc/menu/menudame4",component:GMenuContentDemo4
-            }]}
+            {path:'/doc/tabs',component:TabsDemo}, 
+            {path:'/doc/checkbox',component:CheckBoxDemo}, 
         ]
     }]
 }) 
