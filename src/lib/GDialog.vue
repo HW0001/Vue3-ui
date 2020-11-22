@@ -1,6 +1,11 @@
 <template>
   <teleport to="body">
-    <div @click="maskclick" class="golu-diaglog-mask" v-if="visible" ref="mask"></div>
+    <div
+      @click="maskclick"
+      class="golu-diaglog-mask"
+      v-if="visible"
+      ref="mask"
+    ></div>
     <div class="golu-dialog" v-if="visible" :class="type">
       <header class="golu-dialog-header">
         <slot name="title">Title</slot>
@@ -10,7 +15,9 @@
         <slot name="content">我是内容</slot>
       </main>
       <footer class="golu-dialog-footer">
-        <g-button @click="ok" class="golu-dialog-button" theme="primary">确认</g-button>
+        <g-button @click="ok" class="golu-dialog-button" theme="primary"
+          >确认</g-button
+        >
         <g-button @click="cancel">取消</g-button>
       </footer>
     </div>

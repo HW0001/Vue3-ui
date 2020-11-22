@@ -21,13 +21,20 @@
 </template>
 
 <script lang="ts">
-import { onMounted, onUpdated, ref, RendererElement, RendererNode, watchEffect } from "vue";
+import {
+  onMounted,
+  onUpdated,
+  ref,
+  RendererElement,
+  RendererNode,
+  watchEffect,
+} from "vue";
 import GTab from "./Gtab.vue";
 export default {
   components: {},
   setup(props, context) {
     const allcomponents = context.slots.default();
-    if (allcomponents.some((e) => e.type !== GTab.name)) {
+    if (allcomponents.some((e) => e.type !== GTab)) {
       throw new Error("子组件加载错误");
     }
     const title = allcomponents.map((e) => e.props.title);
@@ -38,8 +45,12 @@ export default {
     const underline = ref(null);
 
     const x = () => {
-      underline.value.style.width = currentdiv.value.getBoundingClientRect().width + "px";
-      underline.value.style.left = currentdiv.value.getBoundingClientRect().left - nav.value.getBoundingClientRect().left + "px";
+      underline.value.style.width =
+        currentdiv.value.getBoundingClientRect().width + "px";
+      underline.value.style.left =
+        currentdiv.value.getBoundingClientRect().left -
+        nav.value.getBoundingClientRect().left +
+        "px";
     };
     watchEffect(() => {
       currentslot.value = allcomponents[selectindex.value];
