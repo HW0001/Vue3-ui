@@ -1,32 +1,34 @@
 <template>
   <label
     class="golu-checkbox"
-    :class="{ selected: isChecked, disabled: disabled }"
+    :class="{ selected: checked, disabled: disabled }"
   >
-    <input type="checkbox" @click="toggle" />
+    <input type="checkbox" @click="toggle" :name="groupName" :value="value" />
     <span><slot></slot></span>
   </label>
 </template>
 <script lang="ts">
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 
 export default {
   props: {
     disabled: Boolean,
     checked: Boolean,
     isGroup: Boolean,
+    groupName: String,
+    value: String,
   },
   setup(props, context) {
-    const isChecked = ref(props.checked);
     const toggle = () => {
-      if (!props.disabled) {
-        isChecked.value = !isChecked.value;
+      if (!props.disabled && !props.isGroup) {
         context.emit("update:checked", !props.checked);
+      } else if (props.isGroup) {
+        context.emit("itemClick", props.value);
       }
     };
+
     return {
       toggle,
-      isChecked,
     };
   },
 };
