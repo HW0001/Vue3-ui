@@ -5,6 +5,7 @@
       :boxList="boxlist"
       groupName="box"
       :selecteds="selecteds"
+      :disableds="disableds"
       @onChange="onChange"
     ></g-check-box-group>
     {{ selecteds.join(",") }}
@@ -23,11 +24,12 @@ export default {
       { text: "第三个", value: "3" },
     ]);
     const selecteds = ref(["1"]);
+    const disableds = ref(["1"]);
     const onChange = (val: string[]) => {
       selecteds.value = val;
     };
 
-    return { checked, boxlist, selecteds, onChange };
+    return { checked, boxlist, selecteds, onChange, disableds };
   },
   components: { GCheckBox, GCheckBoxGroup },
 };

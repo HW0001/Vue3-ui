@@ -20,10 +20,12 @@ export default {
   },
   setup(props, context) {
     const toggle = () => {
-      if (!props.disabled && !props.isGroup) {
-        context.emit("update:checked", !props.checked);
-      } else if (props.isGroup) {
-        context.emit("itemClick", props.value);
+      if (!props.disabled) {
+        if (!props.isGroup) {
+          context.emit("update:checked", !props.checked);
+        } else if (props.isGroup) {
+          context.emit("itemClick", props.value);
+        }
       }
     };
 

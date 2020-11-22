@@ -6,7 +6,8 @@
       isGroup
       :groupName="groupName"
       :value="item.value"
-      :checked="itemChecked(item.value)"
+      :checked="selecteds && selecteds.indexOf(item.value) > -1"
+      :disabled="disableds && disableds.indexOf(item.value) > -1"
       @itemClick="itemClick"
       >{{ item.text }}</g-check-box
     >
@@ -30,12 +31,10 @@ export default {
     },
     groupName: String,
     selecteds: Array as PropType<string[]>,
+    disableds: Array as PropType<string[]>,
   },
   setup(props, context) {
     const current = ref(props.selecteds);
-    const itemChecked = (val: string) => {
-      return current.value.indexOf(val) > -1;
-    };
     const itemClick = (val: string) => {
       if (current.value.indexOf(val) > -1) {
         current.value = props.selecteds.filter((s) => s !== val);
@@ -47,7 +46,7 @@ export default {
     watchEffect(() => {
       current.value = props.selecteds;
     });
-    return { itemClick, itemChecked };
+    return { itemClick };
   },
 };
 </script>
