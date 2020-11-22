@@ -1,29 +1,32 @@
 <template>
   <label
     class="golu-checkbox"
-    :class="{ selected: checked && !disabled, disabled: disabled }"
+    :class="{ selected: isChecked, disabled: disabled }"
   >
     <input type="checkbox" @click="toggle" />
     <span><slot></slot></span>
   </label>
 </template>
 <script lang="ts">
-import { PropType, ref } from "vue";
+import { ref } from "vue";
 
 export default {
   props: {
     disabled: Boolean,
     checked: Boolean,
+    isGroup: Boolean,
   },
   setup(props, context) {
-    console.log(props.disabled);
+    const isChecked = ref(props.checked);
     const toggle = () => {
       if (!props.disabled) {
+        isChecked.value = !isChecked.value;
         context.emit("update:checked", !props.checked);
       }
     };
     return {
       toggle,
+      isChecked,
     };
   },
 };
