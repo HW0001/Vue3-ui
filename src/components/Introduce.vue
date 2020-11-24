@@ -12,7 +12,10 @@
 
 <style lang="scss" scoped>
 div {
-  width: 80%;
+  width: 40%;
+  @media (max-width: 500px) {
+    width: 80%;
+  }
 }
 
 a {
