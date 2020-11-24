@@ -11,7 +11,7 @@ var Introduce_vue_1 = require("./components/Introduce.vue");
 var Install_vue_1 = require("./components/Install.vue");
 var StartUse_vue_1 = require("./components/StartUse.vue");
 var CheckBoxDemo_vue_1 = require("./components/CheckBoxDemo.vue");
-var history = vue_router_1.createWebHistory();
+var history = vue_router_1.createWebHashHistory();
 var router = vue_router_1.createRouter({
     history: history,
     routes: [{

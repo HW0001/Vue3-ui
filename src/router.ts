@@ -1,4 +1,4 @@
-import {createWebHistory,createRouter} from "vue-router"
+import {createRouter,createWebHashHistory} from "vue-router"
 
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
@@ -12,7 +12,7 @@ import Install from "./components/Install.vue"
 import StartUse from "./components/StartUse.vue"
 import CheckBoxDemo from './components/CheckBoxDemo.vue'
 
-const history=createWebHistory()
+const history=createWebHashHistory()
 const router=createRouter({
     history,
     routes:[{
