@@ -1,6 +1,8 @@
 <template>
   <div>
-    <g-check-box v-model:checked="checked">单选按钮</g-check-box>
+    <g-check-box v-model:checked="checked" @onClick="itemClick"
+      >单选按钮</g-check-box
+    >
     <g-check-box-group
       :boxList="boxlist"
       groupName="box"
@@ -28,8 +30,10 @@ export default {
     const onChange = (val: string[]) => {
       selecteds.value = val;
     };
-
-    return { checked, boxlist, selecteds, onChange, disableds };
+    const itemClick = (checkded) => {
+      selecteds.value = checkded ? boxlist.value.map((b) => b.value) : [];
+    };
+    return { checked, boxlist, selecteds, onChange, disableds, itemClick };
   },
   components: { GCheckBox, GCheckBoxGroup },
 };

@@ -4,8 +4,8 @@
 
 <script>
 import { ref } from "vue";
-import GButton from "../lib/GButton.vue";
-import { openGDialog } from "../lib/openGDialog";
+import GButton from "../../lib/GButton.vue";
+import { openGDialog } from "../../lib/openGDialog";
 export default {
   components: { GButton },
   setup() {

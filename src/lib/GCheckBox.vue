@@ -23,12 +23,12 @@ export default {
       if (!props.disabled) {
         if (!props.isGroup) {
           context.emit("update:checked", !props.checked);
+          context.emit("onClick", !props.checked);
         } else if (props.isGroup) {
           context.emit("itemClick", props.value);
         }
       }
     };
-
     return {
       toggle,
     };

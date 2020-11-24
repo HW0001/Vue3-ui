@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import GTabs from "../lib/GTabs.vue";
-import GTab from "../lib/Gtab.vue";
+import GTabs from "../../lib/GTabs.vue";
+import GTab from "../../lib/Gtab.vue";
 export default {
   components: {
     GTabs,
