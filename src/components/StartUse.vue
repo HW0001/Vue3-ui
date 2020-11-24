@@ -4,8 +4,6 @@
     <pre>import { GButton } from "g-mc-ui";</pre>
     <p>引入css样式</p>
     <pre>import "g-mc-ui/lib/g-mc-ui.css";</pre>
-    <P>目前支持的组件有：</P>
-    <p>GButton、GDialog、GSwitch、GTabs</p>
     <router-link class="back" to="/doc/install">←安装</router-link>
   </div>
 </template>
