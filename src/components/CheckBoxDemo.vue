@@ -1,41 +1,54 @@
 <template>
   <div>
-    <g-check-box v-model:checked="checked" @onClick="itemClick"
-      >单选按钮</g-check-box
-    >
-    <g-check-box-group
-      :boxList="boxlist"
-      groupName="box"
-      :selecteds="selecteds"
-      :disableds="disableds"
-      @onChange="onChange"
-    ></g-check-box-group>
-    {{ selecteds.join(",") }}
+    <demo
+      title="单个checkbox"
+      :content="content1"
+      :component="CheckBox01"
+      :code="code1"
+    ></demo>
+    <demo
+      title="多个checkbox"
+      :content="content2"
+      :component="CheckBox02"
+      :code="code2"
+    ></demo>
+    <demo
+      title="组合使用"
+      :content="content3"
+      :component="CheckBox03"
+      :code="code3"
+    ></demo>
   </div>
 </template>
 <script lang="ts">
-import { ref } from "vue";
-import GCheckBox from "../lib/GCheckBox.vue";
-import GCheckBoxGroup from "../lib/GCheckBoxGroup.vue";
+import CheckBox01 from "./checkbox/CheckBox1.vue";
+import CheckBox02 from "./checkbox/CheckBox2.vue";
+import CheckBox03 from "./checkbox/CheckBox3.vue";
+import Demo from "./Demo.vue";
+import { code as code1, content as content1 } from "./js/checkbox01";
+import { code as code2, content as content2 } from "./js/checkbox02";
+import { code as code3, content as content3 } from "./js/checkbox03";
 export default {
-  setup() {
-    const checked = ref(true);
-    const boxlist = ref([
-      { text: "第一个", value: "1" },
-      { text: "第二个", value: "2" },
-      { text: "第三个", value: "3" },
-    ]);
-    const selecteds = ref(["1"]);
-    const disableds = ref(["1"]);
-    const onChange = (val: string[]) => {
-      selecteds.value = val;
-    };
-    const itemClick = (checkded) => {
-      selecteds.value = checkded ? boxlist.value.map((b) => b.value) : [];
-    };
-    return { checked, boxlist, selecteds, onChange, disableds, itemClick };
+  components: {
+    Demo,
   },
-  components: { GCheckBox, GCheckBoxGroup },
+  setup(props) {
+    return {
+      CheckBox01,
+      CheckBox02,
+      CheckBox03,
+      code1,
+      code2,
+      code3,
+      content1,
+      content2,
+      content3,
+    };
+  },
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.golu-button {
+  margin-left: 20px;
+}
+</style>
