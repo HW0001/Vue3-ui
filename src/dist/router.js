@@ -21,7 +21,7 @@ var router = vue_router_1.createRouter({
             path: '/home', component: Home_vue_1["default"]
         }, {
             path: '/doc', component: Doc_vue_1["default"], children: [
-                { path: '', redirect: "/doc/introduce" },
+                { path: '', redirect: "/doc/install" },
                 { path: '/doc/introduce', component: Introduce_vue_1["default"] },
                 { path: '/doc/install', component: Install_vue_1["default"] },
                 { path: '/doc/startuse', component: StartUse_vue_1["default"] },

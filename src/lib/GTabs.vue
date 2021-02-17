@@ -33,6 +33,7 @@ import GTab from "./Gtab.vue";
 export default {
   components: {},
   setup(props, context) {
+    console.log(context.slots.default());
     const allcomponents = context.slots.default();
     if (allcomponents.some((e) => e.type !== GTab)) {
       throw new Error("子组件加载错误");

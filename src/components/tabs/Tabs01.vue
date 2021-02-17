@@ -13,10 +13,10 @@ export default {
     GTabs,
     GTab,
     Dame01: {
-      template: `<div>我是demo1</div>`,
+      template: `<div>我是demo12</div>`,
     },
     Dame02: {
-      template: `<div>我是demo2</div>`,
+      template: `<div>我是demo32</div>`,
     },
   },
 };

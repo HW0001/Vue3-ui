@@ -22,7 +22,7 @@ const router=createRouter({
         path:'/home',component:Home
     },{
         path:'/doc',component:Doc,children:[
-            {path:'',redirect:"/doc/introduce"},
+            {path:'',redirect:"/doc/install"},
             {path:'/doc/introduce',component:Introduce},
             {path:'/doc/install',component:Install},
             {path:'/doc/startuse',component:StartUse},

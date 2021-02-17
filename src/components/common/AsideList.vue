@@ -3,7 +3,6 @@
     <g-menu>
       <g-menu-group-item>
         <template v-slot:title> <span>使用</span> </template>
-        <g-menu-item to="/doc/introduce">介绍</g-menu-item>
         <g-menu-item to="/doc/install">安装</g-menu-item>
         <g-menu-item to="/doc/startuse">使用</g-menu-item>
       </g-menu-group-item>
